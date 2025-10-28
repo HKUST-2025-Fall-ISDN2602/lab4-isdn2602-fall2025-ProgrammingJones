@@ -2,7 +2,7 @@
 % Task 3
 
 clear all; close all; clc;
-addpath("library_p\");
+addpath("library_p/");
 
 % You may revise the dictionary, but it will not affect the channel coding%
   dict = {[0 0 0 0], [0 0 0 1], [0 0 1 0], [0 0 1 1], [0 1 0 0],...

@@ -23,19 +23,19 @@ msgblk = codeword(1:4);
 % S(2) = rem(sum(codeword([3 4 6])),2);
 % S(3) = rem(sum(codeword([1 3 7])),2);
 % S(4) = rem(sum(codeword([2 4 8])),2);
-% 
-% % check for one bit errors in the message block only
-% % There are four possible one bit errors in the message block
-% 
+
+% check for one bit errors in the message block only
+% There are four possible one bit errors in the message block
+
 % % Modify the code below
-if (S(1)==1)
-   msgblk(1)=not(msgblk(1));%when one bit error is in msgblk(1)
-elseif (S(2)==1)
-   msgblk(2)=not(msgblk(2));%when one bit error is in msgblk(2)
-elseif (S(3)==1)
-   msgblk(3)=not(msgblk(3));%when one bit error is in msgblk(3)
-elseif (S(4)==1)
-   msgblk(4)=not(msgblk(4));%when one bit error is in msgblk(4)
+if (S(1)==1) && (S(2)==0) && (S(3)==1) && (S(4)==0)
+   msgblk(1)=(xor(msgblk(1),1));%when one bit error is in msgblk(1)
+elseif (S(1)==1) && (S(2)==0) && (S(3)==0) && (S(4)==1)
+   msgblk(2)=(xor(msgblk(2),1));%when one bit error is in msgblk(2)
+elseif (S(1)==0) && (S(2)==1) && (S(3)==1) && (S(4)==0)
+   msgblk(3)=(xor(msgblk(3),1));%when one bit error is in msgblk(3)
+elseif (S(1)==0) && (S(2)==1) && (S(3)==0) && (S(4)==1)
+   msgblk(4)=(xor(msgblk(4),1));%when one bit error is in msgblk(4)
 end
 
 
